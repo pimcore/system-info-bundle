@@ -56,25 +56,4 @@ class SettingsController extends AdminController
 
         return new Response($content);
     }
-
-    /**
-     * @Route("/install-check", name="pimcore_bundle_systeminfo_settings_installcheck", methods={"GET", "POST"})
-     *
-     * @param Request $request
-     * @param Connection $db
-     * @param Profiler|null $profiler
-     *
-     * @return Response
-     */
-    public function checkAction(Request $request, Connection $db, ?Profiler $profiler): Response
-    {
-        if ($profiler) {
-            $profiler->disable();
-        }
-
-        $viewParams = Requirements::checkAll($db);
-        $viewParams['headless'] = $request->query->getBoolean('headless') || $request->request->getBoolean('headless');
-
-        return $this->render('@PimcoreSystemInfo/admin/install/check.html.twig', $viewParams);
-    }
 }
