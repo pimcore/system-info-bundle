@@ -13,4 +13,4 @@ A clean interface based on [`amnuts/opcache-gui`](https://github.com/amnuts/opca
 Zend OPcache information, showing statistics, settings and cached files, and providing a real-time update 
 for the cache information.
 
-You can check via Admin UI `Tools` / `System Info & Tools` / `PHP OPcache Status` menu.
+You can check via Admin UI `Tools` / `System Info & Tools` / `PHP OPcache Status` menu...
