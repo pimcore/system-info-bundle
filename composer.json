@@ -11,6 +11,7 @@
   "require": {
     "php": "^8.1",
     "pimcore/pimcore": "^11.0",
+    "pimcore/admin-ui-classic-bundle": "^1.0",
     "amnuts/opcache-gui": "^3.0.1"
   },
   "autoload": {
