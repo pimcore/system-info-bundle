@@ -1,0 +1,4 @@
+pimcore_admin:
+    admin_csp_header:
+        exclude_paths:
+            - '@^/admin/bundle/system-info/opcache/index@'
