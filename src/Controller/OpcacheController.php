@@ -16,8 +16,8 @@ declare(strict_types=1);
 
 namespace Pimcore\Bundle\SystemInfoBundle\Controller;
 
-use Pimcore\Bundle\AdminBundle\Controller\AdminController;
 use Pimcore\Controller\KernelControllerEventInterface;
+use Pimcore\Controller\UserAwareController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;
@@ -29,7 +29,7 @@ use Symfony\Component\Routing\Annotation\Route;
  *
  * @internal
  */
-class OpcacheController extends AdminController implements KernelControllerEventInterface
+class OpcacheController extends UserAwareController implements KernelControllerEventInterface
 {
     /**
      * @Route("/index", name="pimcore_bundle_systeminfo_opcache_index")

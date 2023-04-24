@@ -15,7 +15,7 @@
 
 namespace Pimcore\Bundle\SystemInfoBundle\Controller;
 
-use Pimcore\Bundle\AdminBundle\Controller\AdminController;
+use Pimcore\Controller\UserAwareController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Profiler\Profiler;
@@ -26,7 +26,7 @@ use Symfony\Component\Routing\Annotation\Route;
  *
  * @internal
  */
-class SettingsController extends AdminController
+class SettingsController extends UserAwareController
 {
     /**
      * @Route("/phpinfo", name="pimcore_bundle_systeminfo_settings_phpinfo", methods={"GET"})
