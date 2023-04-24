@@ -48,14 +48,4 @@ class PimcoreSystemInfoBundle extends AbstractPimcoreBundle implements PimcoreBu
     {
         return \dirname(__DIR__);
     }
-
-    public function getEditmodeJsPaths(): array
-    {
-        return [];
-    }
-
-    public function getEditmodeCssPaths(): array
-    {
-        return [];
-    }
 }
