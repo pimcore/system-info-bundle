@@ -44,7 +44,7 @@ class SettingsController extends UserAwareController
             $profiler->disable();
         }
 
-        if (!$this->getAdminUser()->isAdmin()) {
+        if (!$this->getPimcoreUser()->isAdmin()) {
             throw new \Exception('Permission denied');
         }
 
