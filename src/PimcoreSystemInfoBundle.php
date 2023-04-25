@@ -15,22 +15,20 @@
 
 namespace Pimcore\Bundle\SystemInfoBundle;
 
-use Pimcore\Bundle\AdminBundle\Support\BundleAdminSupportTrait;
-use Pimcore\Bundle\AdminBundle\Support\PimcoreBundleAdminSupportInterface;
 use Pimcore\Extension\Bundle\AbstractPimcoreBundle;
+use Pimcore\Extension\Bundle\PimcoreBundleAdminClassicInterface;
+use Pimcore\Extension\Bundle\Traits\BundleAdminClassicTrait;
 use Pimcore\Extension\Bundle\Traits\PackageVersionTrait;
 
-class PimcoreSystemInfoBundle extends AbstractPimcoreBundle implements PimcoreBundleAdminSupportInterface
+class PimcoreSystemInfoBundle extends AbstractPimcoreBundle implements PimcoreBundleAdminClassicInterface
 {
-    use BundleAdminSupportTrait;
     use PackageVersionTrait;
+    use BundleAdminClassicTrait;
 
-    // @TODO Enable when bundle move to own repo
-    //
-    //    public function getComposerPackageName(): string
-    //    {
-    //        return 'pimcore/system-info-bundle';
-    //    }
+    public function getComposerPackageName(): string
+    {
+        return 'pimcore/system-info-bundle';
+    }
 
     public function getCssPaths(): array
     {
