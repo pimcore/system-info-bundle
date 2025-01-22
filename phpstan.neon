@@ -3,9 +3,10 @@ parameters:
     reportUnmatchedIgnoredErrors: false
     ignoreErrors:
     	-
-    	    dentifier: missingType.iterableValue
+    	    identifier: missingType.iterableValue
+
     	-
-            identifier: missingType.generics
+    	    identifier: missingType.generics
     paths:
         - src
     bootstrapFiles:
