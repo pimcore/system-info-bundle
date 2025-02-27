@@ -15,15 +15,22 @@
 
 namespace Pimcore\Bundle\SystemInfoBundle;
 
+use Pimcore\Bundle\SystemInfoBundle\DependencyInjection\PimcoreSystemInfoExtension;
 use Pimcore\Extension\Bundle\AbstractPimcoreBundle;
 use Pimcore\Extension\Bundle\PimcoreBundleAdminClassicInterface;
 use Pimcore\Extension\Bundle\Traits\BundleAdminClassicTrait;
 use Pimcore\Extension\Bundle\Traits\PackageVersionTrait;
+use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 
 class PimcoreSystemInfoBundle extends AbstractPimcoreBundle implements PimcoreBundleAdminClassicInterface
 {
     use PackageVersionTrait;
     use BundleAdminClassicTrait;
+
+    public function getContainerExtension(): ExtensionInterface
+    {
+        return new PimcoreSystemInfoExtension();
+    }
 
     public function getComposerPackageName(): string
     {
