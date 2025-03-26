@@ -22,23 +22,21 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;
 use Symfony\Component\HttpKernel\Profiler\Profiler;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 
 /**
- * @Route("/opcache")
- *
  * @internal
  */
+#[Route('/opcache')]
 class OpcacheController extends UserAwareController implements KernelControllerEventInterface
 {
     /**
-     * @Route("/index", name="pimcore_bundle_systeminfo_opcache_index")
-     *
      * @param Request $request
      * @param Profiler|null $profiler
      *
      * @return Response
      */
+    #[Route('/index', name: 'pimcore_bundle_systeminfo_opcache_index')]
     public function indexAction(Request $request, ?Profiler $profiler): Response
     {
         if ($profiler) {
