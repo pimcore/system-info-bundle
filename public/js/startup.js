@@ -4,9 +4,33 @@ pimcore.bundle.system_info.startup = Class.create({
     user: null,
     toolbar: null,
     perspectiveConfig: null,
+    perspectivePermissions: [
+        'items.systemtools.items.phpinfo',
+        'items.systemtools.items.opcache',
+    ],
 
     initialize: function(){
+        if (pimcore.events.onPerspectiveEditorLoadPermissions) {
+            document.addEventListener(pimcore.events.onPerspectiveEditorLoadPermissions, this.perspectiveEditorLoadPermissions.bind(this));
+        }
+
         document.addEventListener(pimcore.events.preMenuBuild, this.preMenuBuild.bind(this));
+    },
+
+    perspectiveEditorLoadPermissions: function (e) {
+        const context = e.detail.context;
+        const menu = e.detail.menu;
+        const permissions = e.detail.permissions;
+
+        if(context === 'toolbar' &&
+            menu === 'extras'
+        ) {
+            this.perspectivePermissions.forEach((permission) => {
+                if (permissions[context][menu].indexOf(permission) === -1) {
+                    permissions[context][menu].push(permission);
+                }
+            });
+        }
     },
 
     preMenuBuild: function (event) {
