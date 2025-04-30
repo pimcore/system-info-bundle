@@ -1,6 +1,6 @@
 {
   "name": "pimcore/system-info-bundle",
-  "license": "Pimcore Open Core License (POCL)",
+  "license": "proprietary",
   "type": "pimcore-bundle",
   "description": "Pimcore System Info & Tools Bundle that provides additional tools for checking System information.",
   "config": {
