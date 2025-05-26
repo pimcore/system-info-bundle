@@ -1,2 +1,5 @@
+plugin_pimcore_perspectiveeditor_menu_extras_items_systemtools_items_opcache: "PHP OPcache Status"
+plugin_pimcore_perspectiveeditor_menu_extras_items_systemtools_items_phpinfo: "PHP Info"
+
 bundle_systemInfo_php_opcache_status: PHP OPcache status
 bundle_systemInfo_php_info: PHP Info
