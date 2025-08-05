@@ -10,14 +10,17 @@ pimcore.bundle.system_info.startup = Class.create({
     ],
 
     initialize: function(){
-        if (pimcore.events.onPerspectiveEditorLoadPermissions) {
-            document.addEventListener(pimcore.events.onPerspectiveEditorLoadPermissions, this.perspectiveEditorLoadPermissions.bind(this));
-        }
-
+        document.addEventListener(pimcore.events.pimcoreReady, this.onPimcoreReady.bind(this));
         document.addEventListener(pimcore.events.preMenuBuild, this.preMenuBuild.bind(this));
     },
 
-    perspectiveEditorLoadPermissions: function (e) {
+    onPimcoreReady: function (e) {
+        if (pimcore.events.onPerspectiveEditorLoadPermissions) {
+            document.addEventListener(pimcore.events.onPerspectiveEditorLoadPermissions, this.onPerspectiveEditorLoadPermissions.bind(this));
+        }
+    },
+
+    onPerspectiveEditorLoadPermissions: function (e) {
         const context = e.detail.context;
         const menu = e.detail.menu;
         const permissions = e.detail.permissions;
