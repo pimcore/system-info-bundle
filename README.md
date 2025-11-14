@@ -1,4 +1,7 @@
 # Pimcore System Info & Tools
+> [!WARNING]
+> This bundle won't be migrated to Pimcore Studio and therefore will be deprecated with 2.2.
+
 System Info & Tools bundle provides additional tools for checking system information in Pimcore Admin UI.
 
 ## Tools:

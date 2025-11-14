@@ -19,10 +19,22 @@ use Pimcore\Extension\Bundle\Traits\BundleAdminClassicTrait;
 use Pimcore\Extension\Bundle\Traits\PackageVersionTrait;
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 
+/**
+ * @deprecated version 2.2
+ */
 class PimcoreSystemInfoBundle extends AbstractPimcoreBundle implements PimcoreBundleAdminClassicInterface
 {
     use PackageVersionTrait;
     use BundleAdminClassicTrait;
+
+    public function __construct()
+    {
+        trigger_deprecation(
+            'pimcore/system-info-bundle',
+            '2.2',
+            'The SystemInfoBundle is deprecated and will be discontinued with Pimcore Studio.'
+        );
+    }
 
     public function getContainerExtension(): ExtensionInterface
     {
