@@ -47,7 +47,6 @@ jobs:
         with:
             head_ref: ${{ github.head_ref || github.ref_name }}
             repository: ${{ github.repository }}
-       
         secrets:
             PHP_CS_FIXER_GITHUB_TOKEN: ${{ secrets.PHP_CS_FIXER_GITHUB_TOKEN }}
 
