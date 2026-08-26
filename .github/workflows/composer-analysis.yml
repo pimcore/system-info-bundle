@@ -21,7 +21,7 @@ env:
   PIMCORE_PROJECT_ROOT: ${{ github.workspace }}
 
 concurrency:
-    group: ${{ github.workflow }}-${{ github.head_ref || github.ref_name }}
+    group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
     cancel-in-progress: true
 
 jobs:

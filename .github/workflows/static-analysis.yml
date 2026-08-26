@@ -18,6 +18,7 @@ on:
     branches:
       - "[0-9]+.[0-9]+"
       - "[0-9]+.x"
+      - "feature-*"
 
 env:
   PIMCORE_PROJECT_ROOT: ${{ github.workspace }}
